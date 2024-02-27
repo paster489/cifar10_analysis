@@ -104,3 +104,153 @@ Epoch [85], train_loss: 0.4151, train_acc: 0.8491, val_loss: 1.7743, val_acc: 0.
 Epoch [86], train_loss: 0.3782, train_acc: 0.8613, val_loss: 1.8647, val_acc: 0.5532
 Epoch [87], train_loss: 0.3462, train_acc: 0.8742, val_loss: 1.9200, val_acc: 0.5531
 Epoch [88], train_loss: 0.3067, train_acc: 0.8878, val_loss: 2.0473, val_acc: 0.5574
+Epoch [89], train_loss: 0.2851, train_acc: 0.8968, val_loss: 2.1135, val_acc: 0.5607
+Epoch [90], train_loss: 0.2641, train_acc: 0.9061, val_loss: 2.1463, val_acc: 0.5567
+Epoch [91], train_loss: 0.2392, train_acc: 0.9125, val_loss: 2.2269, val_acc: 0.5563
+Epoch [92], train_loss: 0.2153, train_acc: 0.9247, val_loss: 2.3205, val_acc: 0.5620
+Epoch [93], train_loss: 0.2038, train_acc: 0.9256, val_loss: 2.4101, val_acc: 0.5544
+Epoch [94], train_loss: 0.1965, train_acc: 0.9267, val_loss: 2.3854, val_acc: 0.5530
+Epoch [95], train_loss: 0.1816, train_acc: 0.9342, val_loss: 2.4453, val_acc: 0.5602
+Epoch [96], train_loss: 0.1684, train_acc: 0.9380, val_loss: 2.5349, val_acc: 0.5509
+Epoch [97], train_loss: 0.1573, train_acc: 0.9439, val_loss: 2.5018, val_acc: 0.5491
+Epoch [98], train_loss: 0.1573, train_acc: 0.9442, val_loss: 2.5512, val_acc: 0.5457
+Epoch [99], train_loss: 0.1446, train_acc: 0.9490, val_loss: 2.5831, val_acc: 0.5555
+ 
+Visualize trining => save images
+ 
+Load the model => start
+ 
+Check best/last models => start
+ 
+Summary result of test set => best model  {'val_loss': 1.2483915090560913, 'val_acc': 0.5665038824081421}
+Summary result of test set => last model {'val_loss': 2.630969762802124, 'val_acc': 0.544921875}
+Test set evaluation => save results for postprocessing
+ 
+** accuracy: 0.567
+--
+confusion matrix
+[[640  52  46  24  33  13  18  11 115  48]
+ [ 30 706  10  16  11   9  18   4  38 158]
+ [ 86  22 407  74 154  96  95  27  25  14]
+ [ 17  23  73 367  69 266 122  25  20  18]
+ [ 28  12  96  58 570  61  93  58  17   7]
+ [ 17  10  66 168  89 537  58  36   8  11]
+ [ 12  13  63  65 102  33 691   7   5   9]
+ [ 27  16  39  66 165 106  31 506  16  28]
+ [142  98  22  12  17   9  13   7 624  56]
+ [ 56 168   8  28  18  12  20  25  47 618]]
+--
+classification report
+              precision    recall  f1-score   support
+
+    aircraft       0.61      0.64      0.62      1000
+  automobile       0.63      0.71      0.67      1000
+        bird       0.49      0.41      0.44      1000
+         cat       0.42      0.37      0.39      1000
+        deer       0.46      0.57      0.51      1000
+         dog       0.47      0.54      0.50      1000
+        frog       0.60      0.69      0.64      1000
+       horse       0.72      0.51      0.59      1000
+        ship       0.68      0.62      0.65      1000
+       truck       0.64      0.62      0.63      1000
+
+    accuracy                           0.57     10000
+   macro avg       0.57      0.57      0.57     10000
+weighted avg       0.57      0.57      0.57     10000
+
+END OF CODE
+ 
+
+------------------------------------------------------------
+Sender: LSF System <DoNotReply>
+Subject: Job 270510: <cifar10> in cluster <wexac> Done
+
+Job <cifar10> was submitted from host <access4> by user <ingap> in cluster <wexac> at Tue Feb 27 11:12:02 2024
+Job was executed on host(s) <hgn53>, in queue <waic-short>, as user <ingap> in cluster <wexac> at Tue Feb 27 11:12:50 2024
+</home/projects/bagon/ingap> was used as the home directory.
+</home/projects/bagon/ingap> was used as the working directory.
+Started at Tue Feb 27 11:12:50 2024
+Terminated at Tue Feb 27 12:14:56 2024
+Results reported at Tue Feb 27 12:14:56 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -J cifar10                             
+#BSUB -o /home/projects/bagon/ingap/LSF_out/ViT_small_out_%J        #/home/projects/bagon/ingap/torch_lightening/GPU_out_%J
+#BSUB -e /home/projects/bagon/ingap/LSF_err/ViT_small_err_%J        #/home/projects/bagon/ingap/torch_lightening/GPU_err_%J
+#BSUB -q waic-short  
+#BSUB -m "waic_2023_gpu"                       
+#BSUB -gpu num=1:j_exclusive=yes:gmem=30G    # Number of GPUs per node
+#BSUB -R rusage[mem=10G]                     # Resource allocation per task
+#BSUB -R affinity[thread*4]                  # Resource allocation per task
+
+if [ -f ~/.bash_profile ]; then
+  . ~/.bash_profile
+elif [ -f ~/.profile ]; then
+  . ~/.profile
+fi
+module purge;module load miniconda/23.3.1-0_environmentally;module load NCCL/2.12.12-GCCcore-11.3.0-CUDA-11.8.0;module load CUDA/11.8.0
+. activate;conda deactivate;conda activate /home/projects/bagon/ingap/.conda/envs/torch_gpu_env # PL for MNIST
+cd /home/projects/bagon/ingap/cifar10_analysis/cifar10_analysis/
+
+# Normalization check
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_No" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "N1" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_N1" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "N2" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_N2" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "N1_aug" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_N1_aug" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "N2_aug" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_N2_aug" --model "CNN"
+
+# LR
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.005 --epochs 100 --optimization "Adam" --experiment_name "CNN_LR_005" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.007 --epochs 100 --optimization "Adam" --experiment_name "CNN_LR_007" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.009 --epochs 100 --optimization "Adam" --experiment_name "CNN_LR_009" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.0005 --epochs 100 --optimization "Adam" --experiment_name "CNN_LR_0005" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.0001 --epochs 100 --optimization "Adam" --experiment_name "CNN_LR_0001" --model "CNN"
+
+# Optimizer
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "SGD" --experiment_name "CNN_SGD" --model "CNN"
+
+# Model
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "ResNet_18" --model "ResNet_18"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "ResNet_34" --model "ResNet_34"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "ViT" --model "ViT"
+python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "ViT_small" --model "ViT_small"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "ViT_tiny" --model "ViT_tiny"
+
+# Batch size
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 32 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_32" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 64 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_64" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 256 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_256" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 512 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_512" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 1024 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_1024" --model "CNN"
+
+
+(... more ...)
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   5877.00 sec.
+    Max Memory :                                 2791 MB
+    Average Memory :                             2728.03 MB
+    Total Requested Memory :                     10240.00 MB
+    Delta Memory :                               7449.00 MB
+    Max Swap :                                   -
+    Max Processes :                              8
+    Max Threads :                                30
+    Run time :                                   3733 sec.
+    Turnaround time :                            3774 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file </home/projects/bagon/ingap/LSF_err/ViT_small_err_270510> for stderr output of this job.
+
