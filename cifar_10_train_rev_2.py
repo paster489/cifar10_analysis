@@ -61,6 +61,8 @@ g.manual_seed(random_seed)
 # MAIN
 ###################################################################
 def main(hparams):
+    print(' ')
+    print('-------------------------------------------------------------------------------')
     print('main => start')
     print(' ')
 
@@ -88,6 +90,7 @@ def main(hparams):
     ###################################################################
     # Datasets Load
     ###################################################################
+    print('-------------------------------------------------------------------------------')
     print('Datasets Load => start')
     print(' ')
     
@@ -97,6 +100,8 @@ def main(hparams):
     ###################################################################
     # Train/Validation random split
     ###################################################################
+    print(' ')
+    print('-------------------------------------------------------------------------------')
     print('Train/Validation random split => start')
     print(' ')
     
@@ -108,6 +113,7 @@ def main(hparams):
     ###################################################################
     # DataLoader
     ###################################################################
+    print('-------------------------------------------------------------------------------')
     print('DataLoader => start')
     print(' ')
 
@@ -119,6 +125,7 @@ def main(hparams):
     ###################################################################
     # To_device
     ###################################################################
+    print('-------------------------------------------------------------------------------')
     print('To_device => start')
     print(' ')
 
@@ -138,6 +145,7 @@ def main(hparams):
     ###################################################################
     # Train & save model
     ###################################################################
+    print('-------------------------------------------------------------------------------')
     print('Train => start')
     print(' ')
     history, best_model_path, last_model_path = fit(hparams.epochs, hparams.lr, model, train_dl, val_dl, opt_func, exp_res_dir_name, hparams.experiment_name)
@@ -146,6 +154,7 @@ def main(hparams):
     ###################################################################
     # Visualize trining => save images
     ###################################################################
+    print('-------------------------------------------------------------------------------')
     print('Visualize trining => save images')
     print(' ')
     plot_losses(history,hparams.experiment_name,exp_res_dir_name)
@@ -154,6 +163,7 @@ def main(hparams):
     ###################################################################
     # Load the model
     ###################################################################
+    print('-------------------------------------------------------------------------------')
     print('Load the model => start')
     print(' ')
 
@@ -166,29 +176,41 @@ def main(hparams):
     ###################################################################
     # Compare results of loaded model and working model => start
     ###################################################################
+    print('-------------------------------------------------------------------------------')
     print('Check best/last models => start')
     print(' ')
 
     test_dl = DeviceDataLoader(DataLoader(test_ds, batch_size*2), device)
 
     eval_best = evaluate(model_best, test_dl)
-    print('Summary result of test set => best model ', eval_best)
+
+    print("Summary result of test set => best model => val_loss: {:.4f}, val_acc: {:.4f}, val_precision: {:.4f}, val_recall: {:.4f}, val_f1: {:.4f}".format(
+            eval_best['val_loss'], eval_best['val_acc'], eval_best['val_precision'], eval_best['val_recall'], eval_best['val_f1']))
 
     eval_last = evaluate(model_last, test_dl)
-    print('Summary result of test set => last model', eval_last)
+    print("Summary result of test set => last model => val_loss: {:.4f}, val_acc: {:.4f}, val_precision: {:.4f}, val_recall: {:.4f}, val_f1: {:.4f}".format(
+            eval_last['val_loss'], eval_last['val_acc'], eval_last['val_precision'], eval_last['val_recall'], eval_last['val_f1']))
+    print(' ')
 
     ###################################################################
     # Test set evaluation => save results for postprocessing
     ###################################################################
-    print('Test set evaluation => save results for postprocessing')
+    print('-------------------------------------------------------------------------------')
+    print('Test set evaluation (best model) => save results for postprocessing')
     print(' ')
 
     test_dl = DeviceDataLoader(DataLoader(test_ds, batch_size*2), device)
     
-    file_name = hparams.experiment_name + ".json"
+    file_name = hparams.experiment_name + "_test_set.json"
     experiment_name = hparams.experiment_name
     evaluate_summary(model_best, test_dl, experiment_name, file_name, device, exp_res_dir_name,cifar10_labels)
 
+    print('-------------------------------------------------------------------------------')
+    print('Valid set evaluation (best model) => save results for postprocessing')
+    print(' ')
+    file_name = hparams.experiment_name + "_val_set.json"
+    experiment_name = hparams.experiment_name
+    evaluate_summary(model_best, val_dl, experiment_name, file_name, device, exp_res_dir_name,cifar10_labels)
 
 ###################################################################
 if __name__ == "__main__":
@@ -214,12 +236,16 @@ if __name__ == "__main__":
             # ResNet_34
             # ViT 
             # ViT_small
+            # ViT_tiny
+            # ViT_simple
     
     args = parser.parse_args()
 
     main(args)
 
+    print('-------------------------------------------------------------------------------')
     print('END OF CODE')
+    print('-------------------------------------------------------------------------------')
     print(' ')
     
     

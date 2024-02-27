@@ -1,7 +1,7 @@
 #!/bin/bash
 #BSUB -J cifar10                             
-#BSUB -o /home/projects/bagon/ingap/LSF_out/CNN_1024_out_%J        #/home/projects/bagon/ingap/torch_lightening/GPU_out_%J
-#BSUB -e /home/projects/bagon/ingap/LSF_err/CNN_1024_err_%J        #/home/projects/bagon/ingap/torch_lightening/GPU_err_%J
+#BSUB -o /home/projects/bagon/ingap/LSF_out/ViT_simple_out_%J        #/home/projects/bagon/ingap/torch_lightening/GPU_out_%J
+#BSUB -e /home/projects/bagon/ingap/LSF_err/ViT_simple_err_%J        #/home/projects/bagon/ingap/torch_lightening/GPU_err_%J
 #BSUB -q waic-short  
 #BSUB -m "waic_2023_gpu"                       
 #BSUB -gpu num=1:j_exclusive=yes:gmem=30G    # Number of GPUs per node
@@ -40,6 +40,7 @@ cd /home/projects/bagon/ingap/cifar10_analysis/cifar10_analysis/
 #python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "ViT" --model "ViT"
 #python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "ViT_small" --model "ViT_small"
 #python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "ViT_tiny" --model "ViT_tiny"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "ViT_simple" --model "ViT_tiny"
 
 # Batch size
 #python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 32 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_32" --model "CNN"

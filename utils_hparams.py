@@ -108,6 +108,17 @@ def chose_model(hparams_model,device):
                                 dropout = 0.1,
                                 emb_dropout = 0.1
                             ), device)
+    elif hparams_model == 'ViT_simple':
+        from models.ViT_simple_model import SimpleViT
+        model = to_device(SimpleViT(
+                            image_size = 32,
+                            patch_size = 4,
+                            num_classes = 10,
+                            dim = 512,
+                            depth = 6,
+                            heads = 8,
+                            mlp_dim = 512
+                        ), device)
     else:
         print('Model is not defined')
             

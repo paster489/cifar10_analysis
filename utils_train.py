@@ -90,20 +90,27 @@ def fit(epochs, lr, model, train_loader, val_loader, opt_func, exp_res_dir_name,
     return history, best_model_path, last_model_path
 
 ###################################################################
-# Plot  training loss/acc
+# Plot  training loss/acc/precision, recall, F1
 ###################################################################
 def plot_accuracies(history,experiment_name,model_dir):
     val_acc = [x['val_acc'] for x in history]
+    val_precision = [x['val_precision'] for x in history]
+    val_recall = [x['val_recall'] for x in history]
+    val_f1 = [x['val_f1'] for x in history]
     train_acc = [x['train_acc'] for x in history]
     plt.figure()
     plt.plot(train_acc, '-bx')
+    plt.plot(val_precision, '-mx')
+    plt.plot(val_recall, '-gx')
+    plt.plot(val_f1, '-kx')
     plt.plot(val_acc, '-rx')
     plt.xlabel('epoch')
     plt.ylabel('accuracy')
-    plt.legend(['Training', 'Validation'])
+    plt.legend(['Train acc','Valid prec','Valid recall','Valid F1-score','Valid acc'])
     plt.title('Accuracy vs. No. of epochs');
     plt.savefig(model_dir + experiment_name + '_acc.png')
     plt.close()
+
 
 def plot_losses(history,experiment_name,model_dir):
     train_losses = [x.get('train_loss') for x in history]

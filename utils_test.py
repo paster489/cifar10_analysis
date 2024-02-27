@@ -61,7 +61,7 @@ def evaluate_summary(model, test_dl, experiment_name, file_name, device,model_di
     true_values, pred_values = evaluate_F1(model, test_dl,device)
 
     # print results
-    print("** accuracy: {:.3f}".format(accuracy_score(true_values, pred_values)))
+    print("** accuracy: {:.4f}".format(accuracy_score(true_values, pred_values)))
     print("--")
     print("confusion matrix")
     print(confusion_matrix(true_values, pred_values))
