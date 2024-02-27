@@ -1,0 +1,50 @@
+#!/bin/bash
+#BSUB -J cifar10                             
+#BSUB -o /home/projects/bagon/ingap/LSF_out/CNN_1024_out_%J        #/home/projects/bagon/ingap/torch_lightening/GPU_out_%J
+#BSUB -e /home/projects/bagon/ingap/LSF_err/CNN_1024_err_%J        #/home/projects/bagon/ingap/torch_lightening/GPU_err_%J
+#BSUB -q waic-short  
+#BSUB -m "waic_2023_gpu"                       
+#BSUB -gpu num=1:j_exclusive=yes:gmem=30G    # Number of GPUs per node
+#BSUB -R rusage[mem=10G]                     # Resource allocation per task
+#BSUB -R affinity[thread*4]                  # Resource allocation per task
+
+if [ -f ~/.bash_profile ]; then
+  . ~/.bash_profile
+elif [ -f ~/.profile ]; then
+  . ~/.profile
+fi
+module purge;module load miniconda/23.3.1-0_environmentally;module load NCCL/2.12.12-GCCcore-11.3.0-CUDA-11.8.0;module load CUDA/11.8.0
+. activate;conda deactivate;conda activate /home/projects/bagon/ingap/.conda/envs/torch_gpu_env # PL for MNIST
+cd /home/projects/bagon/ingap/cifar10_analysis/cifar10_analysis/
+
+# Normalization check
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_No" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "N1" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_N1" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "N2" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_N2" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "N1_aug" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_N1_aug" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "N2_aug" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_N2_aug" --model "CNN"
+
+# LR
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.005 --epochs 100 --optimization "Adam" --experiment_name "CNN_LR_005" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.007 --epochs 100 --optimization "Adam" --experiment_name "CNN_LR_007" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.009 --epochs 100 --optimization "Adam" --experiment_name "CNN_LR_009" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.0005 --epochs 100 --optimization "Adam" --experiment_name "CNN_LR_0005" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.0001 --epochs 100 --optimization "Adam" --experiment_name "CNN_LR_0001" --model "CNN"
+
+# Optimizer
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "SGD" --experiment_name "CNN_SGD" --model "CNN"
+
+# Model
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "ResNet_18" --model "ResNet_18"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "ResNet_34" --model "ResNet_34"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "ViT" --model "ViT"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "ViT_small" --model "ViT_small"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "ViT_tiny" --model "ViT_tiny"
+
+# Batch size
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 32 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_32" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 64 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_64" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 256 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_256" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 512 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_512" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 1024 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_1024" --model "CNN"
+
