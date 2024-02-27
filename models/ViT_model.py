@@ -73,7 +73,7 @@ def pair(t):
 
 # classes
 
-class PreNorm(nn.Module):
+class PreNorm(ImageClassificationBase):
     def __init__(self, dim, fn):
         super().__init__()
         self.norm = nn.LayerNorm(dim)
