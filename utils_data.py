@@ -23,6 +23,50 @@ from argparse import ArgumentParser
 import multiprocessing
 import random
 
+import kornia as K
+from kornia.augmentation import (
+    CenterCrop,
+    ColorJiggle,
+    ColorJitter,
+    PadTo,
+    RandomAffine,
+    RandomBoxBlur,
+    RandomBrightness,
+    RandomChannelShuffle,
+    RandomContrast,
+    RandomCrop,
+    RandomCutMixV2,
+    RandomElasticTransform,
+    RandomEqualize,
+    RandomErasing,
+    RandomFisheye,
+    RandomGamma,
+    RandomGaussianBlur,
+    RandomGaussianNoise,
+    RandomGrayscale,
+    RandomHorizontalFlip,
+    RandomHue,
+    RandomInvert,
+    RandomJigsaw,
+    RandomMixUpV2,
+    RandomMosaic,
+    RandomMotionBlur,
+    RandomPerspective,
+    RandomPlanckianJitter,
+    RandomPlasmaBrightness,
+    RandomPlasmaContrast,
+    RandomPlasmaShadow,
+    RandomPosterize,
+    RandomResizedCrop,
+    RandomRGBShift,
+    RandomRotation,
+    RandomSaturation,
+    RandomSharpness,
+    RandomSolarize,
+    RandomThinPlateSpline,
+    RandomVerticalFlip,
+)
+
 ###################################################################
 # Datasets Load - Simple
 ###################################################################
@@ -145,5 +189,50 @@ def dataloader_help(train_ds, val_ds,n_workers,batch_size,g,seed_worker):
     return train_dl, val_dl
 
 
+###################################################################
+def show_example(img, label,dataset):
+    print('Label: ', dataset.classes[label], "(" + str(label) + ")")
+    plt.imshow(img.permute(1, 2, 0))
+    # convert torch.Size([3, 32, 32]) to torch.Size([32, 32, 3])
+
+###################################################################
+def display_images_for_label(dataset, label):
+    # Collect indices of images for the specified label
+    label_indices = [idx for idx, (_, lbl) in enumerate(dataset) if lbl == label]
+    
+    # Create a figure for displaying images
+    num_images = 10
+    num_cols = 10
+    num_rows = 1
+
+    print(dataset.classes[label])
+    fig, axs = plt.subplots(num_rows, num_cols, figsize=(11, 4))
+    
+    # Display images for the specified label
+    for i, idx in enumerate(label_indices[:num_images]):
+        img, label = dataset[idx]
+        plt.subplot(1,10,i+1)
+        plt.axis('off')
+        plt.imshow(img.permute(1, 2, 0))
+        
+    plt.show()
+
+###################################################################
+def show_batch(dl):
+    for images, labels in dl:
+        fig, ax = plt.subplots(figsize=(12, 6))
+        ax.set_xticks([]); ax.set_yticks([])
+        ax.imshow(make_grid(images, nrow=16).permute(1, 2, 0))
+        break
+
+###################################################################   
+def visual_kornia(aug_method,img_reference, img):
+    plt.figure(figsize=(11, 4))
+    plt.subplot(1,2,1)
+    plt.imshow(img_reference)
+
+    transformed_img = aug_method(img)
+    plt.subplot(1,2,2)
+    plt.imshow(transformed_img[0,:,:,:].permute(1, 2, 0))
 
 

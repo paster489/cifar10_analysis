@@ -73,7 +73,50 @@ def evaluate_summary(model, test_dl, experiment_name, file_name, device,model_di
     metric_filepath = os.path.join(model_dir, file_name)
     write_metrics(true_values, pred_values, experiment_name, metric_filepath)
 
+###################################################################
+def evaluate_inference(model, test_dl, device):
+  model.eval()
+  true_values, pred_values = [], []
+    
+  for batch in test_dl:
+    images, labels = batch
+    images = images.to(device)
 
+    with torch.no_grad():
+      logits = model(images)
+        
+    preds = torch.argmax(logits, dim=1).cpu().numpy()
+    labels = labels.cpu().numpy()
 
+    true_values.extend(labels.tolist())
+    pred_values.extend(preds.tolist())
+
+  return true_values, pred_values
+
+###################################################################
+def write_metrics(true_values, pred_values, experiment_name, metric_filepath):
+  fout = open(metric_filepath, "w")
+  p, r, f, s = precision_recall_fscore_support(true_values, pred_values, average="micro")
+  metrics_dict = {
+    "precision": p, "recall": r, "f1-score": f, "support": s
+  }
+  metrics_dict["name"] = experiment_name
+  fout.write(json.dumps(metrics_dict))
+  fout.close()
+
+###################################################################
+from utils_hparams import *
+
+def predict_image_inference(img, model, device, test_ds):
+    # Convert to a batch of 1
+    xb = to_device(img.unsqueeze(0), device)
+    # Get predictions from model
+    yb = model(xb)
+    # Pick index with highest probability
+    _, preds  = torch.max(yb, dim=1)
+    # Retrieve the class label
+    return test_ds.classes[preds[0].item()]
+
+###################################################################
 
 
