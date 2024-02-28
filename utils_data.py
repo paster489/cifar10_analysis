@@ -117,6 +117,24 @@ def norm_2_aug_DL(data_dir):
                                             train=True, download=True)
     return train_ds_norm_2_aug, test_ds_norm_2
 
+
+###################################################################
+# Augmanation
+###################################################################
+def aug_DL(data_dir):
+
+    train_ds, test_ds = simple_DL(data_dir)
+
+    train_ds_aug = torchvision.datasets.CIFAR10(data_dir+'/train',
+                                            transform=Compose([
+                                              transforms.RandomHorizontalFlip(p=0.5),
+                                              transforms.RandomCrop(32, padding=4),
+                                              transforms.ToTensor()
+                                            ]),
+                                            train=True, download=True)
+    return train_ds_aug, test_ds
+
+
 ###################################################################
 # DataLoader
 ###################################################################
@@ -125,4 +143,7 @@ def dataloader_help(train_ds, val_ds,n_workers,batch_size,g,seed_worker):
     val_dl = DataLoader(val_ds, batch_size*2, num_workers=n_workers, pin_memory=True, generator=g, worker_init_fn=seed_worker)
         
     return train_dl, val_dl
+
+
+
 

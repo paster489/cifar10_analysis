@@ -1,0 +1,306 @@
+loading ...
+loaded conda.sh
+sh shell detected
+ 
+-------------------------------------------------------------------------------
+main => start
+ 
+-------------------------------------------------------------------------------
+Datasets Load => start
+ 
+Files already downloaded and verified
+Files already downloaded and verified
+ 
+-------------------------------------------------------------------------------
+Train/Validation random split => start
+ 
+-------------------------------------------------------------------------------
+DataLoader => start
+ 
+-------------------------------------------------------------------------------
+To_device => start
+ 
+-------------------------------------------------------------------------------
+Train => start
+ 
+Epoch [0], train_loss: 1.8319, train_acc: 0.3161, val_loss: 1.4707, val_acc: 0.4457, val_precision: 0.4606, val_recall: 0.4457, val_f1: 0.4283
+Epoch [1], train_loss: 1.3227, train_acc: 0.5178, val_loss: 1.2206, val_acc: 0.5473, val_precision: 0.5831, val_recall: 0.5473, val_f1: 0.5314
+Epoch [2], train_loss: 1.0652, train_acc: 0.6152, val_loss: 1.0334, val_acc: 0.6170, val_precision: 0.6728, val_recall: 0.6170, val_f1: 0.6088
+Epoch [3], train_loss: 0.8805, train_acc: 0.6869, val_loss: 1.0619, val_acc: 0.6327, val_precision: 0.6773, val_recall: 0.6327, val_f1: 0.6183
+Epoch [4], train_loss: 0.7374, train_acc: 0.7386, val_loss: 0.7981, val_acc: 0.7202, val_precision: 0.7331, val_recall: 0.7202, val_f1: 0.7213
+Epoch [5], train_loss: 0.6144, train_acc: 0.7827, val_loss: 0.7941, val_acc: 0.7245, val_precision: 0.7471, val_recall: 0.7245, val_f1: 0.7275
+Epoch [6], train_loss: 0.5123, train_acc: 0.8219, val_loss: 0.7679, val_acc: 0.7394, val_precision: 0.7561, val_recall: 0.7394, val_f1: 0.7401
+Epoch [7], train_loss: 0.4058, train_acc: 0.8557, val_loss: 0.8534, val_acc: 0.7360, val_precision: 0.7567, val_recall: 0.7360, val_f1: 0.7385
+Epoch [8], train_loss: 0.3110, train_acc: 0.8892, val_loss: 0.8917, val_acc: 0.7531, val_precision: 0.7659, val_recall: 0.7531, val_f1: 0.7530
+Epoch [9], train_loss: 0.2345, train_acc: 0.9168, val_loss: 1.0725, val_acc: 0.7341, val_precision: 0.7544, val_recall: 0.7341, val_f1: 0.7353
+Epoch [10], train_loss: 0.1903, train_acc: 0.9332, val_loss: 1.0330, val_acc: 0.7443, val_precision: 0.7539, val_recall: 0.7443, val_f1: 0.7436
+Epoch [11], train_loss: 0.1542, train_acc: 0.9461, val_loss: 1.2010, val_acc: 0.7476, val_precision: 0.7596, val_recall: 0.7476, val_f1: 0.7484
+Epoch [12], train_loss: 0.1266, train_acc: 0.9565, val_loss: 1.2042, val_acc: 0.7381, val_precision: 0.7574, val_recall: 0.7381, val_f1: 0.7421
+Epoch [13], train_loss: 0.0992, train_acc: 0.9657, val_loss: 1.2680, val_acc: 0.7505, val_precision: 0.7601, val_recall: 0.7505, val_f1: 0.7508
+Epoch [14], train_loss: 0.1003, train_acc: 0.9661, val_loss: 1.3508, val_acc: 0.7398, val_precision: 0.7468, val_recall: 0.7398, val_f1: 0.7363
+Epoch [15], train_loss: 0.0800, train_acc: 0.9724, val_loss: 1.4314, val_acc: 0.7419, val_precision: 0.7557, val_recall: 0.7419, val_f1: 0.7431
+Epoch [16], train_loss: 0.0781, train_acc: 0.9728, val_loss: 1.5817, val_acc: 0.7293, val_precision: 0.7465, val_recall: 0.7293, val_f1: 0.7300
+Epoch [17], train_loss: 0.0880, train_acc: 0.9716, val_loss: 1.4876, val_acc: 0.7459, val_precision: 0.7559, val_recall: 0.7459, val_f1: 0.7448
+Epoch [18], train_loss: 0.0644, train_acc: 0.9784, val_loss: 1.5183, val_acc: 0.7495, val_precision: 0.7618, val_recall: 0.7495, val_f1: 0.7499
+Epoch [19], train_loss: 0.0591, train_acc: 0.9788, val_loss: 1.5728, val_acc: 0.7370, val_precision: 0.7499, val_recall: 0.7370, val_f1: 0.7379
+Epoch [20], train_loss: 0.0689, train_acc: 0.9763, val_loss: 1.5387, val_acc: 0.7400, val_precision: 0.7483, val_recall: 0.7400, val_f1: 0.7391
+Epoch [21], train_loss: 0.0687, train_acc: 0.9769, val_loss: 1.6097, val_acc: 0.7506, val_precision: 0.7576, val_recall: 0.7506, val_f1: 0.7488
+Epoch [22], train_loss: 0.0605, train_acc: 0.9794, val_loss: 1.5922, val_acc: 0.7425, val_precision: 0.7570, val_recall: 0.7425, val_f1: 0.7447
+Epoch [23], train_loss: 0.0531, train_acc: 0.9824, val_loss: 1.6796, val_acc: 0.7368, val_precision: 0.7507, val_recall: 0.7368, val_f1: 0.7356
+Epoch [24], train_loss: 0.0577, train_acc: 0.9810, val_loss: 1.6670, val_acc: 0.7432, val_precision: 0.7557, val_recall: 0.7432, val_f1: 0.7427
+Epoch [25], train_loss: 0.0587, train_acc: 0.9806, val_loss: 1.7244, val_acc: 0.7479, val_precision: 0.7591, val_recall: 0.7479, val_f1: 0.7480
+Epoch [26], train_loss: 0.0536, train_acc: 0.9818, val_loss: 1.6826, val_acc: 0.7438, val_precision: 0.7522, val_recall: 0.7438, val_f1: 0.7437
+Epoch [27], train_loss: 0.0496, train_acc: 0.9841, val_loss: 1.8541, val_acc: 0.7330, val_precision: 0.7523, val_recall: 0.7330, val_f1: 0.7363
+Epoch [28], train_loss: 0.0555, train_acc: 0.9816, val_loss: 1.6903, val_acc: 0.7442, val_precision: 0.7546, val_recall: 0.7442, val_f1: 0.7444
+Epoch [29], train_loss: 0.0544, train_acc: 0.9823, val_loss: 1.6543, val_acc: 0.7540, val_precision: 0.7608, val_recall: 0.7540, val_f1: 0.7531
+Epoch [30], train_loss: 0.0421, train_acc: 0.9872, val_loss: 1.7882, val_acc: 0.7439, val_precision: 0.7554, val_recall: 0.7439, val_f1: 0.7450
+Epoch [31], train_loss: 0.0500, train_acc: 0.9841, val_loss: 1.7166, val_acc: 0.7535, val_precision: 0.7585, val_recall: 0.7535, val_f1: 0.7517
+Epoch [32], train_loss: 0.0501, train_acc: 0.9831, val_loss: 1.7761, val_acc: 0.7376, val_precision: 0.7526, val_recall: 0.7376, val_f1: 0.7389
+Epoch [33], train_loss: 0.0695, train_acc: 0.9769, val_loss: 1.8263, val_acc: 0.7389, val_precision: 0.7524, val_recall: 0.7389, val_f1: 0.7388
+Epoch [34], train_loss: 0.0515, train_acc: 0.9831, val_loss: 1.7588, val_acc: 0.7422, val_precision: 0.7592, val_recall: 0.7422, val_f1: 0.7453
+Epoch [35], train_loss: 0.0430, train_acc: 0.9866, val_loss: 1.8349, val_acc: 0.7417, val_precision: 0.7488, val_recall: 0.7417, val_f1: 0.7406
+Epoch [36], train_loss: 0.0475, train_acc: 0.9848, val_loss: 1.8889, val_acc: 0.7427, val_precision: 0.7495, val_recall: 0.7427, val_f1: 0.7410
+Epoch [37], train_loss: 0.0419, train_acc: 0.9864, val_loss: 1.8315, val_acc: 0.7314, val_precision: 0.7466, val_recall: 0.7314, val_f1: 0.7327
+Epoch [38], train_loss: 0.0491, train_acc: 0.9851, val_loss: 1.8072, val_acc: 0.7458, val_precision: 0.7560, val_recall: 0.7458, val_f1: 0.7468
+Epoch [39], train_loss: 0.0458, train_acc: 0.9864, val_loss: 1.7632, val_acc: 0.7494, val_precision: 0.7544, val_recall: 0.7494, val_f1: 0.7480
+Epoch [40], train_loss: 0.0437, train_acc: 0.9870, val_loss: 2.1042, val_acc: 0.7293, val_precision: 0.7428, val_recall: 0.7293, val_f1: 0.7280
+Epoch [41], train_loss: 0.1024, train_acc: 0.9679, val_loss: 1.7303, val_acc: 0.7479, val_precision: 0.7609, val_recall: 0.7479, val_f1: 0.7494
+Epoch [42], train_loss: 0.0237, train_acc: 0.9920, val_loss: 2.1662, val_acc: 0.7397, val_precision: 0.7501, val_recall: 0.7397, val_f1: 0.7374
+Epoch [43], train_loss: 0.0342, train_acc: 0.9891, val_loss: 2.0889, val_acc: 0.7363, val_precision: 0.7476, val_recall: 0.7363, val_f1: 0.7358
+Epoch [44], train_loss: 0.0420, train_acc: 0.9872, val_loss: 2.2349, val_acc: 0.7281, val_precision: 0.7497, val_recall: 0.7281, val_f1: 0.7306
+Epoch [45], train_loss: 0.0551, train_acc: 0.9826, val_loss: 1.9924, val_acc: 0.7381, val_precision: 0.7571, val_recall: 0.7381, val_f1: 0.7413
+Epoch [46], train_loss: 0.0222, train_acc: 0.9928, val_loss: 2.2950, val_acc: 0.7304, val_precision: 0.7503, val_recall: 0.7304, val_f1: 0.7319
+Epoch [47], train_loss: 0.0469, train_acc: 0.9853, val_loss: 2.0029, val_acc: 0.7406, val_precision: 0.7490, val_recall: 0.7406, val_f1: 0.7389
+Epoch [48], train_loss: 0.0448, train_acc: 0.9856, val_loss: 1.9552, val_acc: 0.7431, val_precision: 0.7506, val_recall: 0.7431, val_f1: 0.7412
+Epoch [49], train_loss: 0.0279, train_acc: 0.9909, val_loss: 2.2004, val_acc: 0.7304, val_precision: 0.7463, val_recall: 0.7304, val_f1: 0.7319
+Epoch [50], train_loss: 0.0455, train_acc: 0.9854, val_loss: 1.9109, val_acc: 0.7478, val_precision: 0.7598, val_recall: 0.7478, val_f1: 0.7487
+Epoch [51], train_loss: 0.0332, train_acc: 0.9894, val_loss: 2.1525, val_acc: 0.7332, val_precision: 0.7417, val_recall: 0.7332, val_f1: 0.7331
+Epoch [52], train_loss: 0.0473, train_acc: 0.9851, val_loss: 2.0154, val_acc: 0.7409, val_precision: 0.7492, val_recall: 0.7409, val_f1: 0.7407
+Epoch [53], train_loss: 0.0397, train_acc: 0.9877, val_loss: 2.1526, val_acc: 0.7449, val_precision: 0.7516, val_recall: 0.7449, val_f1: 0.7432
+Epoch [54], train_loss: 0.0373, train_acc: 0.9882, val_loss: 2.1446, val_acc: 0.7298, val_precision: 0.7400, val_recall: 0.7298, val_f1: 0.7296
+Epoch [55], train_loss: 0.0449, train_acc: 0.9858, val_loss: 1.9999, val_acc: 0.7427, val_precision: 0.7525, val_recall: 0.7427, val_f1: 0.7432
+Epoch [56], train_loss: 0.0327, train_acc: 0.9899, val_loss: 2.0402, val_acc: 0.7426, val_precision: 0.7510, val_recall: 0.7426, val_f1: 0.7426
+Epoch [57], train_loss: 0.0355, train_acc: 0.9890, val_loss: 2.0088, val_acc: 0.7480, val_precision: 0.7538, val_recall: 0.7480, val_f1: 0.7466
+Epoch [58], train_loss: 0.0407, train_acc: 0.9874, val_loss: 2.0714, val_acc: 0.7411, val_precision: 0.7459, val_recall: 0.7411, val_f1: 0.7387
+Epoch [59], train_loss: 0.0401, train_acc: 0.9875, val_loss: 1.9081, val_acc: 0.7410, val_precision: 0.7490, val_recall: 0.7410, val_f1: 0.7400
+Epoch [60], train_loss: 0.0431, train_acc: 0.9868, val_loss: 1.9509, val_acc: 0.7496, val_precision: 0.7561, val_recall: 0.7496, val_f1: 0.7483
+Epoch [61], train_loss: 0.0358, train_acc: 0.9891, val_loss: 2.0764, val_acc: 0.7412, val_precision: 0.7504, val_recall: 0.7412, val_f1: 0.7402
+Epoch [62], train_loss: 0.0344, train_acc: 0.9896, val_loss: 2.1573, val_acc: 0.7337, val_precision: 0.7543, val_recall: 0.7337, val_f1: 0.7382
+Epoch [63], train_loss: 0.0413, train_acc: 0.9881, val_loss: 2.1158, val_acc: 0.7305, val_precision: 0.7590, val_recall: 0.7305, val_f1: 0.7366
+Epoch [64], train_loss: 0.0332, train_acc: 0.9897, val_loss: 2.0569, val_acc: 0.7441, val_precision: 0.7536, val_recall: 0.7441, val_f1: 0.7437
+Epoch [65], train_loss: 0.0265, train_acc: 0.9920, val_loss: 2.2296, val_acc: 0.7399, val_precision: 0.7475, val_recall: 0.7399, val_f1: 0.7380
+Epoch [66], train_loss: 0.0418, train_acc: 0.9879, val_loss: 1.9890, val_acc: 0.7400, val_precision: 0.7495, val_recall: 0.7400, val_f1: 0.7396
+Epoch [67], train_loss: 0.0467, train_acc: 0.9862, val_loss: 2.0785, val_acc: 0.7437, val_precision: 0.7586, val_recall: 0.7437, val_f1: 0.7441
+Epoch [68], train_loss: 0.0212, train_acc: 0.9937, val_loss: 2.0498, val_acc: 0.7402, val_precision: 0.7531, val_recall: 0.7402, val_f1: 0.7417
+Epoch [69], train_loss: 0.0301, train_acc: 0.9905, val_loss: 2.1831, val_acc: 0.7355, val_precision: 0.7508, val_recall: 0.7355, val_f1: 0.7373
+Epoch [70], train_loss: 0.0528, train_acc: 0.9845, val_loss: 2.1899, val_acc: 0.7375, val_precision: 0.7513, val_recall: 0.7375, val_f1: 0.7369
+Epoch [71], train_loss: 0.0339, train_acc: 0.9896, val_loss: 2.0768, val_acc: 0.7448, val_precision: 0.7554, val_recall: 0.7448, val_f1: 0.7458
+Epoch [72], train_loss: 0.0280, train_acc: 0.9915, val_loss: 2.3212, val_acc: 0.7463, val_precision: 0.7545, val_recall: 0.7463, val_f1: 0.7457
+Epoch [73], train_loss: 0.0357, train_acc: 0.9893, val_loss: 2.3768, val_acc: 0.7338, val_precision: 0.7542, val_recall: 0.7338, val_f1: 0.7370
+Epoch [74], train_loss: 0.0399, train_acc: 0.9886, val_loss: 2.2542, val_acc: 0.7459, val_precision: 0.7562, val_recall: 0.7459, val_f1: 0.7471
+Epoch [75], train_loss: 0.0317, train_acc: 0.9909, val_loss: 2.1927, val_acc: 0.7283, val_precision: 0.7473, val_recall: 0.7283, val_f1: 0.7320
+Epoch [76], train_loss: 0.0308, train_acc: 0.9909, val_loss: 2.4250, val_acc: 0.7388, val_precision: 0.7520, val_recall: 0.7388, val_f1: 0.7413
+Epoch [77], train_loss: 0.0353, train_acc: 0.9899, val_loss: 2.2783, val_acc: 0.7389, val_precision: 0.7459, val_recall: 0.7389, val_f1: 0.7372
+Epoch [78], train_loss: 0.0316, train_acc: 0.9910, val_loss: 2.2861, val_acc: 0.7332, val_precision: 0.7536, val_recall: 0.7332, val_f1: 0.7376
+Epoch [79], train_loss: 0.0332, train_acc: 0.9899, val_loss: 2.4622, val_acc: 0.7401, val_precision: 0.7495, val_recall: 0.7401, val_f1: 0.7387
+Epoch [80], train_loss: 0.0367, train_acc: 0.9895, val_loss: 2.2960, val_acc: 0.7444, val_precision: 0.7567, val_recall: 0.7444, val_f1: 0.7462
+Epoch [81], train_loss: 0.0407, train_acc: 0.9884, val_loss: 2.2537, val_acc: 0.7297, val_precision: 0.7414, val_recall: 0.7297, val_f1: 0.7297
+Epoch [82], train_loss: 0.0389, train_acc: 0.9888, val_loss: 2.2148, val_acc: 0.7447, val_precision: 0.7589, val_recall: 0.7447, val_f1: 0.7467
+Epoch [83], train_loss: 0.0289, train_acc: 0.9918, val_loss: 2.2716, val_acc: 0.7443, val_precision: 0.7549, val_recall: 0.7443, val_f1: 0.7447
+Epoch [84], train_loss: 0.0269, train_acc: 0.9917, val_loss: 2.1956, val_acc: 0.7515, val_precision: 0.7608, val_recall: 0.7515, val_f1: 0.7514
+Epoch [85], train_loss: 0.0301, train_acc: 0.9910, val_loss: 2.2874, val_acc: 0.7395, val_precision: 0.7477, val_recall: 0.7395, val_f1: 0.7379
+Epoch [86], train_loss: 0.0367, train_acc: 0.9899, val_loss: 2.4820, val_acc: 0.7218, val_precision: 0.7468, val_recall: 0.7218, val_f1: 0.7276
+Epoch [87], train_loss: 0.0312, train_acc: 0.9916, val_loss: 2.1582, val_acc: 0.7413, val_precision: 0.7553, val_recall: 0.7413, val_f1: 0.7436
+Epoch [88], train_loss: 0.0375, train_acc: 0.9895, val_loss: 2.0385, val_acc: 0.7372, val_precision: 0.7577, val_recall: 0.7372, val_f1: 0.7421
+Epoch [89], train_loss: 0.0274, train_acc: 0.9923, val_loss: 2.4320, val_acc: 0.7360, val_precision: 0.7519, val_recall: 0.7360, val_f1: 0.7390
+Epoch [90], train_loss: 0.0348, train_acc: 0.9910, val_loss: 2.2384, val_acc: 0.7427, val_precision: 0.7495, val_recall: 0.7427, val_f1: 0.7422
+Epoch [91], train_loss: 0.0266, train_acc: 0.9924, val_loss: 2.6264, val_acc: 0.7367, val_precision: 0.7517, val_recall: 0.7367, val_f1: 0.7376
+Epoch [92], train_loss: 0.0345, train_acc: 0.9903, val_loss: 2.4421, val_acc: 0.7296, val_precision: 0.7434, val_recall: 0.7296, val_f1: 0.7290
+Epoch [93], train_loss: 0.0983, train_acc: 0.9722, val_loss: 1.9892, val_acc: 0.7401, val_precision: 0.7543, val_recall: 0.7401, val_f1: 0.7427
+Epoch [94], train_loss: 0.0138, train_acc: 0.9958, val_loss: 2.1917, val_acc: 0.7520, val_precision: 0.7624, val_recall: 0.7520, val_f1: 0.7513
+Epoch [95], train_loss: 0.0210, train_acc: 0.9939, val_loss: 2.4349, val_acc: 0.7489, val_precision: 0.7633, val_recall: 0.7489, val_f1: 0.7512
+Epoch [96], train_loss: 0.0290, train_acc: 0.9922, val_loss: 2.3795, val_acc: 0.7361, val_precision: 0.7435, val_recall: 0.7361, val_f1: 0.7343
+Epoch [97], train_loss: 0.0316, train_acc: 0.9916, val_loss: 2.3814, val_acc: 0.7343, val_precision: 0.7518, val_recall: 0.7343, val_f1: 0.7363
+Epoch [98], train_loss: 0.0359, train_acc: 0.9897, val_loss: 2.4552, val_acc: 0.7272, val_precision: 0.7342, val_recall: 0.7272, val_f1: 0.7236
+Epoch [99], train_loss: 0.0322, train_acc: 0.9905, val_loss: 2.4652, val_acc: 0.7453, val_precision: 0.7588, val_recall: 0.7453, val_f1: 0.7478
+ 
+-------------------------------------------------------------------------------
+Visualize trining => save images
+ 
+-------------------------------------------------------------------------------
+Load the model => start
+ 
+-------------------------------------------------------------------------------
+Check best/last models => start
+ 
+Summary result of test set => best model => val_loss: 0.7900, val_acc: 0.7334, val_precision: 0.7482, val_recall: 0.7334, val_f1: 0.7333
+Summary result of test set => last model => val_loss: 2.5599, val_acc: 0.7367, val_precision: 0.7497, val_recall: 0.7367, val_f1: 0.7380
+ 
+-------------------------------------------------------------------------------
+Test set evaluation (best model) => save results for postprocessing
+ 
+** accuracy: 0.7375
+--
+confusion matrix
+[[755  15  79  26  27   2   9  17  44  26]
+ [ 13 836   4  12   5   1  12   8  31  78]
+ [ 33   1 609  56 165  32  56  35   7   6]
+ [ 10   3  60 568 109 105  71  44  12  18]
+ [ 12   4  42  42 794  12  32  59   2   1]
+ [  8   1  55 229  76 538  31  53   5   4]
+ [  5   3  39  44  75  11 807   8   5   3]
+ [  9   0  29  44  64  29   6 806   3  10]
+ [ 70  22  15  22  10   8   8   7 821  17]
+ [ 24  46  10  22   4   6  12  15  20 841]]
+--
+classification report
+              precision    recall  f1-score   support
+
+    aircraft       0.80      0.76      0.78      1000
+  automobile       0.90      0.84      0.87      1000
+        bird       0.65      0.61      0.63      1000
+         cat       0.53      0.57      0.55      1000
+        deer       0.60      0.79      0.68      1000
+         dog       0.72      0.54      0.62      1000
+        frog       0.77      0.81      0.79      1000
+       horse       0.77      0.81      0.79      1000
+        ship       0.86      0.82      0.84      1000
+       truck       0.84      0.84      0.84      1000
+
+    accuracy                           0.74     10000
+   macro avg       0.74      0.74      0.74     10000
+weighted avg       0.74      0.74      0.74     10000
+
+-------------------------------------------------------------------------------
+Valid set evaluation (best model) => save results for postprocessing
+ 
+** accuracy: 0.7411
+--
+confusion matrix
+[[554   8  57  19  22   2   2  16  26  26]
+ [ 11 649   7   7   5   3   4   4  11  60]
+ [ 27   0 486  45 126  25  36  31   6  11]
+ [ 10   3  44 389  73  68  58  38   7   7]
+ [  9   1  19  34 588   6  18  48   0   7]
+ [  3   1  47 150  60 410  31  50   4   3]
+ [  4   3  32  36  65   4 594   1   4   6]
+ [  6   2  20  26  59  29   5 623   3   6]
+ [ 49  11  19   9  11   2   6   4 629  12]
+ [ 16  34   6  20   0   5  10  10  11 636]]
+--
+classification report
+              precision    recall  f1-score   support
+
+    aircraft       0.80      0.76      0.78       732
+  automobile       0.91      0.85      0.88       761
+        bird       0.66      0.61      0.64       793
+         cat       0.53      0.56      0.54       697
+        deer       0.58      0.81      0.68       730
+         dog       0.74      0.54      0.62       759
+        frog       0.78      0.79      0.79       749
+       horse       0.76      0.80      0.78       779
+        ship       0.90      0.84      0.87       752
+       truck       0.82      0.85      0.84       748
+
+    accuracy                           0.74      7500
+   macro avg       0.75      0.74      0.74      7500
+weighted avg       0.75      0.74      0.74      7500
+
+-------------------------------------------------------------------------------
+END OF CODE
+-------------------------------------------------------------------------------
+ 
+
+------------------------------------------------------------
+Sender: LSF System <DoNotReply>
+Subject: Job 423887: <cifar10> in cluster <wexac> Done
+
+Job <cifar10> was submitted from host <agn01> by user <ingap> in cluster <wexac> at Wed Feb 28 08:22:38 2024
+Job was executed on host(s) <hgn46>, in queue <waic-short>, as user <ingap> in cluster <wexac> at Wed Feb 28 08:22:55 2024
+</home/projects/bagon/ingap> was used as the home directory.
+</home/projects/bagon/ingap> was used as the working directory.
+Started at Wed Feb 28 08:22:55 2024
+Terminated at Wed Feb 28 08:30:50 2024
+Results reported at Wed Feb 28 08:30:50 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -J cifar10                             
+#BSUB -o /home/projects/bagon/ingap/LSF_out/CNN_val_15_out_%J        #/home/projects/bagon/ingap/torch_lightening/GPU_out_%J
+#BSUB -e /home/projects/bagon/ingap/LSF_err/CNN_val_15_err_%J        #/home/projects/bagon/ingap/torch_lightening/GPU_err_%J
+#BSUB -q waic-short  
+#BSUB -m "waic_2023_gpu"                       
+#BSUB -gpu num=1:j_exclusive=yes:gmem=30G    # Number of GPUs per node
+#BSUB -R rusage[mem=10G]                     # Resource allocation per task
+#BSUB -R affinity[thread*4]                  # Resource allocation per task
+
+if [ -f ~/.bash_profile ]; then
+  . ~/.bash_profile
+elif [ -f ~/.profile ]; then
+  . ~/.profile
+fi
+module purge;module load miniconda/23.3.1-0_environmentally;module load NCCL/2.12.12-GCCcore-11.3.0-CUDA-11.8.0;module load CUDA/11.8.0
+. activate;conda deactivate;conda activate /home/projects/bagon/ingap/.conda/envs/torch_gpu_env # PL for MNIST
+cd /home/projects/bagon/ingap/cifar10_analysis/cifar10_analysis/
+
+
+# Reprodusability
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 2 --optimization "Adam" --experiment_name "CNN_No_run_1" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 2 --optimization "Adam" --experiment_name "CNN_No_run_2" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 2 --optimization "Adam" --experiment_name "CNN_No_run_3" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 2 --optimization "Adam" --experiment_name "CNN_No_run_4" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 2 --optimization "Adam" --experiment_name "CNN_No_run_5" --model "CNN"
+
+# Normalization check
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_No" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "N1" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_N1" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "N2" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_N2" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "N1_aug" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_N1_aug" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "N2_aug" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_N2_aug" --model "CNN"
+
+# Valid size
+python cifar_10_train_rev_2.py --normalization "No" --val_size 15 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_val_15" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 20 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_val_20" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 25 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_val_25" --model "CNN"
+
+# LR
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.005 --epochs 100 --optimization "Adam" --experiment_name "CNN_LR_005" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.007 --epochs 100 --optimization "Adam" --experiment_name "CNN_LR_007" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.009 --epochs 100 --optimization "Adam" --experiment_name "CNN_LR_009" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.0005 --epochs 100 --optimization "Adam" --experiment_name "CNN_LR_0005" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.0001 --epochs 100 --optimization "Adam" --experiment_name "CNN_LR_0001" --model "CNN"
+
+# Optimizer
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "SGD" --experiment_name "CNN_SGD" --model "CNN"
+
+# Model
+
+(... more ...)
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1442.00 sec.
+    Max Memory :                                 3443 MB
+    Average Memory :                             3306.52 MB
+    Total Requested Memory :                     10240.00 MB
+    Delta Memory :                               6797.00 MB
+    Max Swap :                                   -
+    Max Processes :                              8
+    Max Threads :                                139
+    Run time :                                   478 sec.
+    Turnaround time :                            492 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file </home/projects/bagon/ingap/LSF_err/CNN_val_15_err_423887> for stderr output of this job.
+

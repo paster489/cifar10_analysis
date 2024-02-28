@@ -138,6 +138,8 @@ def chose_preprocess(hparams_norm,data_dir):
         train_ds, test_ds = norm_1_aug_DL(data_dir)
     elif hparams_norm == "N2_aug":
         train_ds, test_ds = norm_2_aug_DL(data_dir)
+    elif hparams_norm == "aug":
+        train_ds, test_ds = aug_DL(data_dir)
     else:
         print('Error in normalization parameter input')
 

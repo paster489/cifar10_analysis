@@ -223,6 +223,7 @@ if __name__ == "__main__":
             # N2 - normalization only using mean=[0, 0, 0] and std=[1, 1, 1] 
             # N1_aug - normalization N1 and augmentation => RandomHorizontalFlip & RandomCrop
             # N2_aug - normalization N2 and augmentation => RandomHorizontalFlip & RandomCrop
+            # aug - augmentation => RandomHorizontalFlip & RandomCrop
     parser.add_argument("--val_size", default=10, type=int,help="% of validation set frtom training set")
     parser.add_argument("--batch_size", default=128, type=int,help="size of batch")
     parser.add_argument("--num_workers", default=multiprocessing.cpu_count(), type=int, help="Number of workers for dataloader")

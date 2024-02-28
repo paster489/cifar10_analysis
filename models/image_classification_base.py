@@ -65,9 +65,7 @@ class ImageClassificationBase(nn.Module):
 
         return {'val_loss': epoch_loss.item(), 'val_acc': epoch_acc.item(), 
                 'val_precision': epoch_precision.item(), 'val_recall': epoch_recall.item(), 'val_f1': epoch_f1.item()}
-        
-    
-    
+         
     def epoch_end(self, epoch, result):
         #print("Epoch [{}], train_loss: {:.4f}, train_acc: {:.4f}, val_loss: {:.4f}, val_acc: {:.4f}".format(
         #    epoch, result['train_loss'], result['train_acc'], result['val_loss'], result['val_acc']))
@@ -78,13 +76,18 @@ class ImageClassificationBase(nn.Module):
 ###################################################################
 def precision_recall_f1(outputs, labels):
     _, preds = torch.max(outputs, dim=1)
-    true_positives = torch.sum(preds == labels).item()
-    false_positives = torch.sum(preds != labels).item()
-    false_negatives = torch.sum(preds != labels).item()
     
-    precision = true_positives / (true_positives + false_positives + 1e-10)
-    recall = true_positives / (true_positives + false_negatives + 1e-10)
-    f1 = 2 * (precision * recall) / (precision + recall + 1e-10)
+    # Convert PyTorch tensors to numpy arrays
+    preds = preds.cpu().numpy()
+    labels = labels.cpu().numpy()
+    
+    # Calculate precision, recall, and F1-score using sklearn
+    precision, recall, f1, _ = precision_recall_fscore_support(labels, preds, average='weighted')
+    
+    # Convert numpy arrays back to PyTorch tensors
+    precision = torch.tensor(precision)
+    recall = torch.tensor(recall)
+    f1 = torch.tensor(f1)
     
     return precision, recall, f1
 

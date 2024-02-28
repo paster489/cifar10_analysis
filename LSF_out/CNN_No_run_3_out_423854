@@ -1,0 +1,208 @@
+loading ...
+loaded conda.sh
+sh shell detected
+ 
+-------------------------------------------------------------------------------
+main => start
+ 
+-------------------------------------------------------------------------------
+Datasets Load => start
+ 
+Files already downloaded and verified
+Files already downloaded and verified
+ 
+-------------------------------------------------------------------------------
+Train/Validation random split => start
+ 
+-------------------------------------------------------------------------------
+DataLoader => start
+ 
+-------------------------------------------------------------------------------
+To_device => start
+ 
+-------------------------------------------------------------------------------
+Train => start
+ 
+Epoch [0], train_loss: 1.9014, train_acc: 0.2822, val_loss: 1.5055, val_acc: 0.4414, val_precision: 0.4655, val_recall: 0.4414, val_f1: 0.4229
+Epoch [1], train_loss: 1.3065, train_acc: 0.5222, val_loss: 1.1419, val_acc: 0.5794, val_precision: 0.5871, val_recall: 0.5794, val_f1: 0.5726
+ 
+-------------------------------------------------------------------------------
+Visualize trining => save images
+ 
+-------------------------------------------------------------------------------
+Load the model => start
+ 
+-------------------------------------------------------------------------------
+Check best/last models => start
+ 
+Summary result of test set => best model => val_loss: 1.1579, val_acc: 0.5779, val_precision: 0.5841, val_recall: 0.5779, val_f1: 0.5702
+Summary result of test set => last model => val_loss: 1.1579, val_acc: 0.5779, val_precision: 0.5841, val_recall: 0.5779, val_f1: 0.5702
+ 
+-------------------------------------------------------------------------------
+Test set evaluation (best model) => save results for postprocessing
+ 
+** accuracy: 0.5783
+--
+confusion matrix
+[[563  41  61  27  18  11  39  21 158  61]
+ [ 23 816   2  11   6   6  21  11  21  83]
+ [ 88   9 313  75 167 101 155  53  28  11]
+ [ 10  12  45 325  82 225 196  63  17  25]
+ [ 31   7  71  67 458  43 152 160  10   1]
+ [  7   6  61 169  49 490  92 110   8   8]
+ [  0   7  27  76  63  21 764  23   7  12]
+ [ 14   9  14  50  63  92  29 707   5  17]
+ [111  60  13  31   8  13  15  10 706  33]
+ [ 30 190   5  22   3   9  31  34  35 641]]
+--
+classification report
+              precision    recall  f1-score   support
+
+    aircraft       0.64      0.56      0.60      1000
+  automobile       0.71      0.82      0.76      1000
+        bird       0.51      0.31      0.39      1000
+         cat       0.38      0.33      0.35      1000
+        deer       0.50      0.46      0.48      1000
+         dog       0.48      0.49      0.49      1000
+        frog       0.51      0.76      0.61      1000
+       horse       0.59      0.71      0.65      1000
+        ship       0.71      0.71      0.71      1000
+       truck       0.72      0.64      0.68      1000
+
+    accuracy                           0.58     10000
+   macro avg       0.58      0.58      0.57     10000
+weighted avg       0.58      0.58      0.57     10000
+
+-------------------------------------------------------------------------------
+Valid set evaluation (best model) => save results for postprocessing
+ 
+** accuracy: 0.5792
+--
+confusion matrix
+[[288  16  28  10  10   3  19  15  71  28]
+ [ 13 418   1   2   3   5  13   6  12  39]
+ [ 39   8 172  33  86  56  84  32  19   3]
+ [ 11   6  36 148  24 101  97  27  10  11]
+ [ 22   2  32  27 232  19  68  64   3   2]
+ [  1   3  33  82  26 251  49  59   1   9]
+ [  5   3  12  33  45  16 373  11   3   6]
+ [ 12   2  10  24  50  44   8 342   1   7]
+ [ 52  23  14  19   1   4  12   3 366  10]
+ [ 14 112   2  12   4   8  10  19  14 306]]
+--
+classification report
+              precision    recall  f1-score   support
+
+    aircraft       0.63      0.59      0.61       488
+  automobile       0.70      0.82      0.76       512
+        bird       0.51      0.32      0.39       532
+         cat       0.38      0.31      0.34       471
+        deer       0.48      0.49      0.49       471
+         dog       0.50      0.49      0.49       514
+        frog       0.51      0.74      0.60       507
+       horse       0.59      0.68      0.63       500
+        ship       0.73      0.73      0.73       504
+       truck       0.73      0.61      0.66       501
+
+    accuracy                           0.58      5000
+   macro avg       0.58      0.58      0.57      5000
+weighted avg       0.58      0.58      0.57      5000
+
+-------------------------------------------------------------------------------
+END OF CODE
+-------------------------------------------------------------------------------
+ 
+
+------------------------------------------------------------
+Sender: LSF System <DoNotReply>
+Subject: Job 423854: <cifar10> in cluster <wexac> Done
+
+Job <cifar10> was submitted from host <agn01> by user <ingap> in cluster <wexac> at Wed Feb 28 08:20:11 2024
+Job was executed on host(s) <hgn52>, in queue <waic-short>, as user <ingap> in cluster <wexac> at Wed Feb 28 08:20:17 2024
+</home/projects/bagon/ingap> was used as the home directory.
+</home/projects/bagon/ingap> was used as the working directory.
+Started at Wed Feb 28 08:20:17 2024
+Terminated at Wed Feb 28 08:20:56 2024
+Results reported at Wed Feb 28 08:20:56 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -J cifar10                             
+#BSUB -o /home/projects/bagon/ingap/LSF_out/CNN_No_run_3_out_%J        #/home/projects/bagon/ingap/torch_lightening/GPU_out_%J
+#BSUB -e /home/projects/bagon/ingap/LSF_err/CNN_No_run_3_err_%J        #/home/projects/bagon/ingap/torch_lightening/GPU_err_%J
+#BSUB -q waic-short  
+#BSUB -m "waic_2023_gpu"                       
+#BSUB -gpu num=1:j_exclusive=yes:gmem=30G    # Number of GPUs per node
+#BSUB -R rusage[mem=10G]                     # Resource allocation per task
+#BSUB -R affinity[thread*4]                  # Resource allocation per task
+
+if [ -f ~/.bash_profile ]; then
+  . ~/.bash_profile
+elif [ -f ~/.profile ]; then
+  . ~/.profile
+fi
+module purge;module load miniconda/23.3.1-0_environmentally;module load NCCL/2.12.12-GCCcore-11.3.0-CUDA-11.8.0;module load CUDA/11.8.0
+. activate;conda deactivate;conda activate /home/projects/bagon/ingap/.conda/envs/torch_gpu_env # PL for MNIST
+cd /home/projects/bagon/ingap/cifar10_analysis/cifar10_analysis/
+
+
+# Reprodusability
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 2 --optimization "Adam" --experiment_name "CNN_No_run_1" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 2 --optimization "Adam" --experiment_name "CNN_No_run_2" --model "CNN"
+python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 2 --optimization "Adam" --experiment_name "CNN_No_run_3" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 2 --optimization "Adam" --experiment_name "CNN_No_run_4" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 2 --optimization "Adam" --experiment_name "CNN_No_run_5" --model "CNN"
+
+# Normalization check
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_No" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "N1" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_N1" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "N2" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_N2" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "N1_aug" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_N1_aug" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "N2_aug" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_N2_aug" --model "CNN"
+
+# Valid size
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 15 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_val_15" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 20 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_val_20" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 25 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "Adam" --experiment_name "CNN_val_25" --model "CNN"
+
+# LR
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.005 --epochs 100 --optimization "Adam" --experiment_name "CNN_LR_005" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.007 --epochs 100 --optimization "Adam" --experiment_name "CNN_LR_007" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.009 --epochs 100 --optimization "Adam" --experiment_name "CNN_LR_009" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.0005 --epochs 100 --optimization "Adam" --experiment_name "CNN_LR_0005" --model "CNN"
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.0001 --epochs 100 --optimization "Adam" --experiment_name "CNN_LR_0001" --model "CNN"
+
+# Optimizer
+#python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 128 --num_workers 4 --lr 0.001 --epochs 100 --optimization "SGD" --experiment_name "CNN_SGD" --model "CNN"
+
+# Model
+
+(... more ...)
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   57.00 sec.
+    Max Memory :                                 3356 MB
+    Average Memory :                             2198.88 MB
+    Total Requested Memory :                     10240.00 MB
+    Delta Memory :                               6884.00 MB
+    Max Swap :                                   -
+    Max Processes :                              8
+    Max Threads :                                30
+    Run time :                                   40 sec.
+    Turnaround time :                            45 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file </home/projects/bagon/ingap/LSF_err/CNN_No_run_3_err_423854> for stderr output of this job.
+
