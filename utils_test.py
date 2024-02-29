@@ -118,5 +118,93 @@ def predict_image_inference(img, model, device, test_ds):
     return test_ds.classes[preds[0].item()]
 
 ###################################################################
+# Show 10 correct predictions
+###################################################################
+def show_correct_pred(test_ds_clean,test_ds,model_best_optimal,device):
+  # Counter to keep track of displayed mismatched images
+    displayed_count = 0
 
+    # Calculate number of rows and columns for the subplot grid
+    num_images = 10  # Number of mismatched images to display
+    num_cols = 5     # Number of columns in the grid
+    num_rows = math.ceil(num_images / num_cols)
 
+    # Create the subplot grid
+    fig, axs = plt.subplots(num_rows, num_cols, figsize=(12, 8))
+
+    # Iterate through the test dataset
+    for index in range(len(test_ds)):
+        img, label = test_ds[index]
+        img_clean, label_clean = test_ds_clean[index]
+        
+        predicted_label = predict_image_inference(img, model_best_optimal, device, test_ds)
+        
+        # Check if prediction does not match the actual label
+        if predicted_label == test_ds.classes[label]:
+            # Plot the image in the next available subplot
+            ax = axs[displayed_count // num_cols, displayed_count % num_cols]
+            ax.imshow(img_clean.permute(1, 2, 0))
+            ax.set_title(f"Actual: {test_ds.classes[label]}\nPredicted: {predicted_label}")
+            ax.axis('off')
+            
+            # Increment the counter
+            displayed_count += 1
+            
+            # Break the loop if all desired images have been displayed
+            if displayed_count == num_images:
+                break
+
+    # Hide any remaining empty subplots
+    for i in range(displayed_count, num_rows * num_cols):
+        axs[i // num_cols, i % num_cols].axis('off')
+
+    # Adjust layout and display the plot
+    plt.tight_layout()
+    plt.show()
+
+###################################################################
+# Show 10 incorrect predictions
+###################################################################
+def show_incorrect_pred(test_ds_clean, test_ds,model_best_optimal,device):
+    # Counter to keep track of displayed mismatched images
+    displayed_count = 0
+
+    # Calculate number of rows and columns for the subplot grid
+    num_images = 10  # Number of mismatched images to display
+    num_cols = 5     # Number of columns in the grid
+    num_rows = math.ceil(num_images / num_cols)
+
+    # Create the subplot grid
+    fig, axs = plt.subplots(num_rows, num_cols, figsize=(12, 8))
+
+    # Iterate through the test dataset
+    for index in range(len(test_ds)): 
+        img, label = test_ds[index]
+        img_clean, label_clean = test_ds_clean[index]
+        
+        predicted_label = predict_image_inference(img, model_best_optimal, device, test_ds)
+        
+        # Check if prediction does not match the actual label
+        if predicted_label != test_ds.classes[label]:
+            # Plot the image in the next available subplot
+            ax = axs[displayed_count // num_cols, displayed_count % num_cols]
+            
+            ax.imshow(img_clean.permute(1, 2, 0))
+            
+            ax.set_title(f"Actual: {test_ds.classes[label]}\nPredicted: {predicted_label}")
+            ax.axis('off')
+            
+            # Increment the counter
+            displayed_count += 1
+            
+            # Break the loop if all desired images have been displayed
+            if displayed_count == num_images:
+                break
+
+    # Hide any remaining empty subplots
+    for i in range(displayed_count, num_rows * num_cols):
+        axs[i // num_cols, i % num_cols].axis('off')
+
+    # Adjust layout and display the plot
+    plt.tight_layout()
+    plt.show()

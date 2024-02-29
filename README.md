@@ -75,3 +75,5 @@ filder will be cretead where the results of trainijg will be saved.
 
 8\. The summary, conclusions and theoretical questions are inside pdf file.
 
+9\. The reults of experimental running are inside "results" and "LSF_out" folders. 
+
