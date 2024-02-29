@@ -64,39 +64,38 @@ python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 1
 &emsp;&emsp;"N2_aug" - normalization N2 and augmentation using RandomHorizontalFlip & RandomCrop  
 &emsp;&emsp;"aug" - augmentation only, using RandomHorizontalFlip & RandomCrop  
 
-&emsp;&emsp;$\color{blue}{\textsf{"N1\_aug" => the optimal one}}$	
-- "N1_aug" => the optimal one
+- "N1_aug" => the optimal one.
 
 --val_size    
 &emsp;&emsp;Size of validation set, in % from the total training set.  
 
-&emsp;&emsp;<span style="color:blue">10 => the optimal one .</span> 
+- 10 => the optimal one.
 
 --batch_size  
 &emsp;&emsp;Size of batch. The validation batch sixe is x2 of the training batch size.  
 
-&emsp;&emsp;<span style="color:blue">256 => the optimal one .</span>
+- 256 => the optimal one.
 
 --num_workers  
 &emsp;&emsp;Number of workers for dataloader. Don't use high number => can lead to bottle neck.
 
-&emsp;&emsp;<span style="color:blue">4 => the optimal one .</span>
+- 4 => the optimal one.
 
 --lr  
 &emsp;&emsp;Learning rate.
 
-&emsp;&emsp;<span style="color:blue">0.001 => the optimal one .</span>
+- 0.001 => the optimal one.
 
 --epochs  
 &emsp;&emsp;Number of training epochs.
 
-&emsp;&emsp;<span style="color:blue">30 => the optimal one .</span>
+- 30 => the optimal one.
 
 --optimization  
 &emsp;&emsp;"Adam"  
 &emsp;&emsp;"SGD"  
 
-&emsp;&emsp;<span style="color:blue">"Adam" => the optimal one .</span>
+- "Adam" => the optimal one.
 
 --experiment_name  
 &emsp;&emsp;Name of the experimental run. Under this name the directory in results. 
@@ -113,7 +112,7 @@ filder will be cretead where the results of trainijg will be saved.
 &emsp;&emsp;&emsp;&emsp;"ViT_tiny"  
 &emsp;&emsp;&emsp;&emsp;"ViT_simple"  
 
-&emsp;&emsp;<span style="color:blue">"ResNet_34" => the optimal one .</span>
+- "ResNet_34" => the optimal one.
 
   
 # INFERENCE
