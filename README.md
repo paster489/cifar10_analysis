@@ -31,9 +31,9 @@ conda activate envname
 
 Due to time limit, I didn't make the directories generalization in the code.  
 
-After you will clone this git repository, in files “data_visualization.ipynb”, "cifar_10_train_rev_2.py" and “inference.ipynb” replace "/home/projects/bagon/ingap/cifar10_analysis/cifar10_analysis" which is my package location with your one.
+After you will clone this git repository, in files “data_visualization.ipynb”, "cifar_10_train_rev_2.py" and “inference.ipynb” replace "/home/projects/bagon/ingap/cifar10_analysis/cifar10_analysis", which is my package location, with your one.
 
-Data is not loaded in this repository due to storage limitations. So doe the next => 
+Data is not loaded in this repository due to storage limitations. So do the next => 
 ```ruby
 mkdir ./cifar10_data/cifar10
 ```
@@ -116,16 +116,18 @@ filder will be cretead where the results of trainijg will be saved.
 
   
 # INFERENCE
-The summary of model performance using the test set is in the file “inference.ipynb”.  
+The summary of model performance, using the test set, is in the file “inference.ipynb”.  
 
 # GENERAL
 1\. Models are inside "models" folder.
 
 2\. The summary, conclusions and theoretical questions are inside pdf file.
 
-3\. The reults of experimental running are inside "results" and "LSF_out" folders.  
+3\. The results of experimental running are inside "results" and "LSF_out" folders.  
 
 4\. "LSF_err" folder shows the errors during the job run. 
 
-5\. Work was executed on LSF job scheualer cluster. In the file "run-gpu-torch-cifar10.lsf" there are definitions for LSF jobs.
+5\. Work was executed on LSF job scheualer cluster. 
+
+6\. In the file "run-gpu-torch-cifar10.lsf" there are definitions for LSF jobs.
 
