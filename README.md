@@ -64,7 +64,8 @@ python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 1
 &emsp;&emsp;"N2_aug" - normalization N2 and augmentation using RandomHorizontalFlip & RandomCrop  
 &emsp;&emsp;"aug" - augmentation only, using RandomHorizontalFlip & RandomCrop  
 
-&emsp;&emsp;[<span style="color:blue">"N1_aug" => the optimal one ..</span>](#)
+&emsp;&emsp;$\color{blue}{\textsf{"N1\_aug" => the optimal one}}$	
+- "N1_aug" => the optimal one
 
 --val_size    
 &emsp;&emsp;Size of validation set, in % from the total training set.  
