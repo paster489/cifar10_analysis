@@ -8,7 +8,7 @@ The work was executued on servers:
 &emsp;&emsp;Model = ProLiant XL675d Gen10 Plus   
 &emsp;&emsp;Server Cores = 112  
 &emsp;&emsp;CPU =Version: AMD EPYC 7453 28-Core Processor  
-&emsp;&emsp;OS = Centos 7
+&emsp;&emsp;OS = Centos 7.9.2009
 
 # GIT REPOSITORY CLONE
 
