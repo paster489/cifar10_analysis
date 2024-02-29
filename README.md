@@ -12,7 +12,7 @@ The work was executued on servers:
 
 # WORKING ENVIRONMENT
 
-1\. Reproduce conda environment using torch_gpu_env.yml file:
+1\. Reproduce conda environment using "torch_gpu_env.yml" file:
 
 ```ruby
 conda env create --name envname --file=torch_gpu_env.yml
@@ -29,7 +29,8 @@ conda activate envname
 ```
 # PACKAGE DIRECTORIES
 
-Due to time lack I didn't make the directories generalization in code.
+Due to time limit, I didn't make the directories generalization in the code.  
+
 After you will clone this git repository, in files “data_visualization.ipynb”, "cifar_10_train_rev_2.py" and “inference.ipynb” replace "/home/projects/bagon/ingap/cifar10_analysis/cifar10_analysis" which is my package location with your one.
 
 Data is not loaded in this repository due to storage limitations. So doe the next => 
@@ -63,7 +64,7 @@ python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 1
 &emsp;&emsp;"N2_aug" - normalization N2 and augmentation using RandomHorizontalFlip & RandomCrop  
 &emsp;&emsp;"aug" - augmentation only, using RandomHorizontalFlip & RandomCrop  
 
-&emsp;&emsp;<span style="color:blue">"N1_aug" => the optimal one .</span> 
+&emsp;&emsp;[<span style="color:blue">"N1_aug" => the optimal one ..</span>](#)
 
 --val_size    
 &emsp;&emsp;Size of validation set, in % from the total training set.  
