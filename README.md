@@ -10,6 +10,13 @@ The work was executued on servers:
 &emsp;&emsp;CPU =Version: AMD EPYC 7453 28-Core Processor  
 &emsp;&emsp;OS = Centos 7
 
+# GIT REPOSITORY CLONE
+
+```ruby
+git clone git@github.com:paster489/cifar10_analysis.git
+cd cifar10_analysis
+```
+
 # WORKING ENVIRONMENT
 
 1\. Reproduce conda environment using "torch_gpu_env.yml" file:
@@ -27,15 +34,12 @@ conda env create --name envname --file=torch_gpu_env.yml
 ```ruby
 conda activate envname
 ```
-# GIT REPOSITORY CLONE
 
-```ruby
-git clone git@github.com:paster489/cifar10_analysis.git
-```
 
 
 # DATA VISUALIZATION
-The analysis of the dataset is in the file “data_visualization.ipynb”.
+The analysis of the dataset is in the file “data_visualization.ipynb”.  
+Chose correct kernel (conda env) in Jupyter.
 
 # TRAINING
 
@@ -90,8 +94,9 @@ python cifar_10_train_rev_2.py --normalization "No" --val_size 10 --batch_size 1
 - "Adam" => the optimal one.
 
 --experiment_name  
-&emsp;&emsp;Name of the experimental run. Under this name the directory in results. 
-filder will be cretead where the results of trainijg will be saved.  
+&emsp;&emsp;Name of the experimental run.  
+&emsp;&emsp;Under this name the directory in ./results
+folder will be cretead, and there the results of training will be saved.  
 
 --model   
 &emsp;&emsp;Name of the training model: 
@@ -109,6 +114,7 @@ filder will be cretead where the results of trainijg will be saved.
   
 # INFERENCE
 The summary of model performance, using the test set, is in the file “inference.ipynb”.  
+Chose correct kernel (conda env) in Jupyter.
 
 # GENERAL
 1\. Models are inside "models" folder.
