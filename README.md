@@ -27,19 +27,11 @@ conda env create --name envname --file=torch_gpu_env.yml
 ```ruby
 conda activate envname
 ```
-# PACKAGE DIRECTORIES
+# GIT REPOSITORY CLONE
 
-Due to time limit, I didn't make the directories generalization in the code.  
-
-After you will clone this git repository, in files “data_visualization.ipynb”, "cifar_10_train_rev_2.py" and “inference.ipynb” replace "/home/projects/bagon/ingap/cifar10_analysis/cifar10_analysis", which is my package location, with your one.
-
-Data is not loaded in this repository due to storage limitations. So do the next => 
 ```ruby
-mkdir ./cifar10_data/cifar10
+git clone git@github.com:paster489/cifar10_analysis.git
 ```
-
-Here your data will be loaded.
-
 
 
 # DATA VISUALIZATION

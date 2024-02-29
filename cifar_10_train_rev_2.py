@@ -33,6 +33,11 @@ from utils_hparams import *
 import matplotlib
 matplotlib.use('Agg')  # Use Agg backend
 
+import warnings
+from sklearn.exceptions import UndefinedMetricWarning
+# To ignore the UndefinedMetricWarning
+warnings.filterwarnings("ignore", category=UndefinedMetricWarning)
+
 ###################################################################
 # Limiting randomness => https://pytorch.org/docs/stable/notes/randomness.html
 ###################################################################
@@ -67,15 +72,14 @@ def main(hparams):
     print(' ')
 
     ###################################################################
-    # cifar-10 classes
-    ###################################################################
-    cifar10_labels = ["aircraft", "automobile", "bird", "cat", "deer", "dog", "frog", "horse", "ship", "truck"]
-
-    ###################################################################
     # Paths
     ###################################################################
-    data_dir = '~/cifar10_analysis/cifar10_analysis/cifar10_data/cifar10'
-    result_dir = '~/cifar10_analysis/cifar10_analysis/results/'
+    #data_dir = '~/cifar10_analysis/cifar10_analysis/cifar10_data/cifar10'
+    #result_dir = '~/cifar10_analysis/cifar10_analysis/results/'
+
+    data_dir = './cifar10_data/cifar10'
+    result_dir = './results/'
+
     result_dir = os.path.expanduser(result_dir)
 
     # Get the current date and time
@@ -96,6 +100,10 @@ def main(hparams):
     
     # Define type of preprocessing according to user input
     train_ds, test_ds = chose_preprocess(hparams.normalization,data_dir)
+
+    # cifar-10 classes
+    #cifar10_labels = ["aircraft", "automobile", "bird", "cat", "deer", "dog", "frog", "horse", "ship", "truck"]
+    cifar10_labels = train_ds.classes
 
     ###################################################################
     # Train/Validation random split
@@ -203,6 +211,7 @@ def main(hparams):
     
     file_name = hparams.experiment_name + "_test_set.json"
     experiment_name = hparams.experiment_name
+
     evaluate_summary(model_best, test_dl, experiment_name, file_name, device, exp_res_dir_name,cifar10_labels)
 
     print('-------------------------------------------------------------------------------')
