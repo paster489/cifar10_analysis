@@ -125,7 +125,7 @@ Chose correct kernel (conda env) in Jupyter.
 
 4\. "LSF_err" folder shows the errors during the job run. 
 
-5\. Work was executed on LSF job scheualer cluster. 
+5\. Work was executed on LSF job schedualer cluster. 
 
 6\. In the file "run-gpu-torch-cifar10.lsf" there are definitions for LSF jobs.
 
